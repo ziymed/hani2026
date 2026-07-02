@@ -171,8 +171,8 @@ export default function UserForm({ user }: UserFormProps) {
     );
 }
 
-UserForm.layout = (page: any) => {
-    const isEdit = page.props.user !== null;
+UserForm.layout = (props: any) => {
+    const isEdit = props.user !== null;
     return {
         breadcrumbs: [
             {
@@ -185,7 +185,7 @@ UserForm.layout = (page: any) => {
             },
             {
                 title: isEdit ? 'Edit User' : 'New User',
-                href: isEdit ? `/admin/users/${page.props.user.id}/edit` : '/admin/users/create',
+                href: isEdit ? `/admin/users/${props.user.id}/edit` : '/admin/users/create',
             },
         ],
     };

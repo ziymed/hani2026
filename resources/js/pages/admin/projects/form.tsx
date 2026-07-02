@@ -363,8 +363,8 @@ export default function ProjectForm({ project }: ProjectFormProps) {
     );
 }
 
-ProjectForm.layout = (page: any) => {
-    const isEdit = page.props.project !== null;
+ProjectForm.layout = (props: any) => {
+    const isEdit = props.project !== null;
     return {
         breadcrumbs: [
             {
@@ -377,7 +377,7 @@ ProjectForm.layout = (page: any) => {
             },
             {
                 title: isEdit ? 'Edit Project' : 'New Project',
-                href: isEdit ? `/admin/projects/${page.props.project.id}/edit` : '/admin/projects/create',
+                href: isEdit ? `/admin/projects/${props.project.id}/edit` : '/admin/projects/create',
             },
         ],
     };
