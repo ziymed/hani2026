@@ -70,9 +70,9 @@ export default function Home({ featuredProjects }: HomeProps) {
                     <div className="relative group">
                         {/* Elegant outer rose-gold drop-shadow frame */}
                         <div className="absolute -inset-1.5 bg-gradient-to-tr from-primary to-amber-500/40 rounded-[2.5rem] blur-sm opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-                        <div className="relative aspect-[4/5] w-72 sm:w-80 md:w-full overflow-hidden rounded-[2.2rem] border-2 border-border/40 bg-zinc-100 dark:bg-zinc-900 shadow-lg">
+                        <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2.2rem] border-2 border-border/40 bg-zinc-100 dark:bg-zinc-900 shadow-lg">
                             <img
-                                src="/images/hanita_headshot.png"
+                                src="/images/hanita_headshot.jpg"
                                 alt="Hanita"
                                 className="object-cover w-full h-full transform scale-[1.02] group-hover:scale-105 transition-transform duration-700"
                             />
