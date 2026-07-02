@@ -45,7 +45,7 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-1.5 tracking-tight hover:opacity-85 transition-opacity">
-                        <span className="font-serif text-2xl font-black italic tracking-wide text-primary">Hanita<span className="text-zinc-400 font-sans not-italic font-normal">.</span></span>
+                        <span className="font-serif text-2xl font-black italic tracking-wide text-primary">{props.settings?.site_name || 'Hanita'}<span className="text-zinc-400 font-sans not-italic font-normal">.</span></span>
                     </Link>
 
                     {/* Desktop Navigation */}
@@ -243,9 +243,9 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
             <footer className="border-t border-border/40 bg-background/50 backdrop-blur-md py-10 mt-16">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
                     <div className="flex flex-col gap-1.5">
-                        <p className="font-serif text-xl font-bold italic text-primary">Hanita.</p>
+                        <p className="font-serif text-xl font-bold italic text-primary">{props.settings?.site_name || 'Hanita'}.</p>
                         <p className="text-xs text-muted-foreground">
-                            &copy; {new Date().getFullYear()} Hanita. All rights reserved. Crafted with love in Singapore.
+                            &copy; {new Date().getFullYear()} {props.settings?.site_name || 'Hanita'}. All rights reserved. Crafted with love in Singapore.
                         </p>
                     </div>
                     <div className="flex gap-6 text-sm text-muted-foreground font-medium">

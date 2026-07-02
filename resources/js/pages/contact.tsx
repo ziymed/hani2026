@@ -1,5 +1,5 @@
 import React from 'react';
-import { Head, useForm } from '@inertiajs/react';
+import { Head, useForm, usePage } from '@inertiajs/react';
 import { Mail, MessageSquare, Send, User, Sparkles, MapPin, Globe } from 'lucide-react';
 import PortfolioLayout from '@/layouts/portfolio-layout';
 import { Button } from '@/components/ui/button';
@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import InputError from '@/components/input-error';
 
 export default function Contact() {
+    const { settings } = usePage().props as any;
     // Inertia form helper to handle validation and submit states
     const { data, setData, post, processing, errors, reset } = useForm({
         name: '',
@@ -66,8 +67,8 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-[10px] text-zinc-400 dark:text-muted-foreground font-bold uppercase tracking-wider">Email Direct</p>
-                                    <a href="mailto:hello@hanita.design" className="text-sm hover:underline font-bold text-zinc-100 dark:text-foreground">
-                                        hello@hanita.design
+                                    <a href={`mailto:${settings?.contact_email || 'hello@hanita.design'}`} className="text-sm hover:underline font-bold text-zinc-100 dark:text-foreground">
+                                        {settings?.contact_email || 'hello@hanita.design'}
                                     </a>
                                 </div>
                             </div>
@@ -78,7 +79,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-[10px] text-zinc-400 dark:text-muted-foreground font-bold uppercase tracking-wider">Location</p>
-                                    <p className="text-sm text-zinc-100 dark:text-foreground font-bold">Downtown Core, Singapore</p>
+                                    <p className="text-sm text-zinc-100 dark:text-foreground font-bold">{settings?.contact_address || 'Downtown Core, Singapore'}</p>
                                 </div>
                             </div>
 
@@ -88,7 +89,7 @@ export default function Contact() {
                                 </div>
                                 <div>
                                     <p className="text-[10px] text-zinc-400 dark:text-muted-foreground font-bold uppercase tracking-wider">Availability</p>
-                                    <p className="text-sm text-zinc-100 dark:text-foreground font-bold">Immediate Openings</p>
+                                    <p className="text-sm text-zinc-100 dark:text-foreground font-bold">{settings?.availability_status ? (settings.availability_status.includes('roles') ? 'Immediate Openings' : settings.availability_status) : 'Immediate Openings'}</p>
                                 </div>
                             </div>
                         </div>

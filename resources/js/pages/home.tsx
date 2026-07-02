@@ -1,4 +1,4 @@
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import { ArrowRight, Briefcase, GraduationCap, Sparkles, MapPin, Globe, Layers, ChevronRight, Calendar, ExternalLink } from 'lucide-react';
 import PortfolioLayout from '@/layouts/portfolio-layout';
 import { Button } from '@/components/ui/button';
@@ -52,6 +52,7 @@ const workExperience = [
 ];
 
 export default function Home({ featuredProjects }: HomeProps) {
+    const { settings } = usePage().props as any;
     return (
         <PortfolioLayout>
             <Head>
@@ -72,8 +73,8 @@ export default function Home({ featuredProjects }: HomeProps) {
                         <div className="absolute -inset-1.5 bg-gradient-to-tr from-primary to-amber-500/40 rounded-[2.5rem] blur-sm opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
                         <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[2.2rem] border-2 border-border/40 bg-zinc-100 dark:bg-zinc-900 shadow-lg">
                             <img
-                                src="/images/hanita_headshot.jpg"
-                                alt="Hanita"
+                                src={settings?.hero_portrait || "/images/hanita_headshot.jpg"}
+                                alt={settings?.site_name || "Hanita"}
                                 className="object-cover w-full h-full transform scale-[1.02] group-hover:scale-105 transition-transform duration-700"
                             />
                         </div>
@@ -82,11 +83,11 @@ export default function Home({ featuredProjects }: HomeProps) {
                     <div className="flex flex-col gap-2 mt-2 items-center md:items-start">
                         <div className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground">
                             <MapPin className="h-4 w-4 text-primary" />
-                            <span>Based in Singapore</span>
+                            <span>Based in {settings?.contact_address || "Singapore"}</span>
                         </div>
                         <div className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 dark:bg-emerald-500/5 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400">
                             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                            Available for local & remote creative roles
+                            {settings?.availability_status || "Available for local & remote creative roles"}
                         </div>
                     </div>
                 </div>
@@ -99,12 +100,25 @@ export default function Home({ featuredProjects }: HomeProps) {
                     </div>
 
                     <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans font-bold tracking-tight leading-[1.05] text-foreground">
-                        Hi, I'm <span className="font-serif italic font-black text-primary">Hanita</span>. <br />
-                        I design experiences that feel <span className="underline decoration-primary decoration-wavy underline-offset-4">organic</span> & thoughtful.
+                        {settings?.hero_title ? (
+                            settings.hero_title.includes('Hanita') ? (
+                                <>
+                                    Hi, I'm <span className="font-serif italic font-black text-primary">{settings.site_name || 'Hanita'}</span>. <br />
+                                    {settings.hero_title.replace(`Hi, I'm Hanita.`, '').replace(`Hi, I'm ${settings.site_name || 'Hanita'}.`, '')}
+                                </>
+                            ) : (
+                                settings.hero_title
+                            )
+                        ) : (
+                            <>
+                                Hi, I'm <span className="font-serif italic font-black text-primary">Hanita</span>. <br />
+                                I design experiences that feel <span className="underline decoration-primary decoration-wavy underline-offset-4">organic</span> & thoughtful.
+                            </>
+                        )}
                     </h1>
 
                     <p className="text-base sm:text-lg text-muted-foreground max-w-xl leading-relaxed">
-                        I am a digital product designer specialized in bridging high-fidelity user research with premium interaction systems. From banking architecture to spatial AR applications, I strive for design excellence that honors human experience.
+                        {settings?.hero_subtitle || "I am a digital product designer specialized in bridging high-fidelity user research with premium interaction systems. From banking architecture to spatial AR applications, I strive for design excellence that honors human experience."}
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start w-full max-w-xs sm:max-w-none mt-4">
