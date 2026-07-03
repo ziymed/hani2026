@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
     'email',
     'subject',
     'message',
-    'is_read'
+    'is_read',
 ])]
 class ContactMessage extends Model
 {

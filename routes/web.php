@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PortfolioController::class, 'home'])->name('home');
 Route::get('/projects', [PortfolioController::class, 'projects'])->name('projects');
 Route::get('/projects/{project:slug}', [PortfolioController::class, 'project'])->name('projects.show');
+Route::get('/work-samples/schoolhub', [PortfolioController::class, 'schoolhub'])->name('work-samples.schoolhub');
 
 Route::get('/contact', function () {
     return Inertia\Inertia::render('contact');

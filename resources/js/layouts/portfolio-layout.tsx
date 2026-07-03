@@ -33,6 +33,7 @@ export default function PortfolioLayout({ children }: PortfolioLayoutProps) {
     const navItems = [
         { name: 'Home', href: '/' },
         { name: 'Projects', href: '/projects' },
+        { name: 'Work Samples', href: '/work-samples/schoolhub' },
         { name: 'Contact', href: '/contact' },
     ];
 

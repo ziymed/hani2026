@@ -22,32 +22,38 @@ interface HomeProps {
 }
 
 const skills = [
-    { name: 'Figma Systems', desc: 'Component architecture & auto-layouts', category: 'core' },
-    { name: 'User Research', desc: 'Qualitative testing & surveys in Singapore', category: 'core' },
-    { name: 'Spatial UI Design', desc: 'Immersive AR/VR spatial environments', category: 'spatial' },
-    { name: 'Design Systems', desc: 'Scalable multi-platform component tokens', category: 'core' },
-    { name: 'Interaction Design', desc: 'Micro-animations & seamless task flows', category: 'core' },
-    { name: 'Info Architecture', desc: 'Card sorting & low-fidelity sitemaps', category: 'core' },
+    { name: 'User Research & Usability', desc: 'Usability testing, task flows, and HFI standards', category: 'UI/UX' },
+    { name: 'Figma Prototyping', desc: 'High-fidelity wireframing & design documentation', category: 'Design' },
+    { name: 'Data Visualisation', desc: 'Interactive dashboards and Power BI reporting', category: 'Analytics' },
+    { name: 'Workflow Automation', desc: 'Power Automate & Power Apps business logic', category: 'IT Ops' },
+    { name: 'ServiceNow & Systems Support', desc: 'Service desk analytics and incident resolution', category: 'IT Ops' },
+    { name: 'Technical Training', desc: 'Curriculum development and instructional design', category: 'Training' },
 ];
 
 const workExperience = [
     {
-        role: 'Senior Product/UX Designer',
-        company: 'DBS Bank Singapore',
-        period: '2024 - Present',
-        description: 'Leading structural redesigns for digital wealth platforms. Championed the universal design tokens system across web and native platforms, improving developer handoff efficiency by 40%.',
+        role: 'IT & Operations Executive',
+        company: 'London School of Business & Finance (LSBF), Singapore',
+        period: 'June 2025 - June 2026',
+        description: 'Managed IT and operations processes, systems support, and digital learning platforms. Handled vendor coordination, stakeholder communications, and resolved complex administrative and technical service issues.',
     },
     {
-        role: 'UX/UI Designer',
-        company: 'Shopee Singapore',
-        period: '2022 - 2024',
-        description: 'Optimized local checkout flows for Southeast Asian markets. Led core A/B research initiatives on micro-interactions, successfully increasing mobile conversion rates by 8.4%.',
+        role: 'Coding Instructor',
+        company: 'Futurum Academy, Singapore',
+        period: 'September 2024 - May 2025',
+        description: 'Delivered coding, robotics, and game development lessons using Python, Scratch, Construct 3, and Micro:bit. Designed user-friendly lesson materials and structured guided exercises to boost computational thinking.',
     },
     {
-        role: 'Product Designer',
-        company: 'Grab Singapore',
-        period: '2020 - 2022',
-        description: 'Designed spatial maps and connecting booking interfaces. Ran iterative usability labs with Grab drivers and riders to refine transit accessibility features.',
+        role: 'System Analyst',
+        company: 'Institute of Mental Health (IMH), Singapore',
+        period: 'January 2022 - August 2022',
+        description: 'Developed internal databases, multimedia websites, and tracking systems. Analysed ServiceNow ticket volumes to identify bottlenecks, reducing repeat support queries through improved documentation.',
+    },
+    {
+        role: 'ICT Trainer',
+        company: 'Expertise Technologies Pte Ltd, Singapore',
+        period: 'January 2005 - August 2021',
+        description: 'Designed and executed training programs in digital literacy, coding, and web design for students and staff. Managed school websites, network administration, and IT operations.',
     },
 ];
 
@@ -255,24 +261,33 @@ export default function Home({ featuredProjects }: HomeProps) {
                         <div className="flex flex-col gap-4 p-6 rounded-3xl border border-border/40 bg-card/20">
                             <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                                 <GraduationCap className="h-5 w-5 text-primary" />
-                                Academic Anchor
+                                Academic Background
                             </h3>
-                            <div className="flex flex-col gap-1">
-                                <p className="text-sm font-bold text-foreground">B.Sc. Human-Computer Interaction (HCI)</p>
-                                <p className="text-xs text-muted-foreground">Nanyang Technological University (NTU), Singapore</p>
-                                <p className="text-xs text-primary font-semibold mt-1">Honors Graduate</p>
+                            <div className="flex flex-col gap-3">
+                                <div>
+                                    <p className="text-xs font-bold text-foreground">WSQ Professional Diploma in Infocomm Technology</p>
+                                    <p className="text-[11px] text-muted-foreground">Lithan Academy, Singapore | 2024 - 2025</p>
+                                </div>
+                                <div className="border-t border-border/30 pt-2">
+                                    <p className="text-xs font-bold text-foreground">B.Sc. in Computer Engineering</p>
+                                    <p className="text-[11px] text-muted-foreground">Brunel University, UK | 1999</p>
+                                </div>
+                                <div className="border-t border-border/30 pt-2">
+                                    <p className="text-xs font-bold text-foreground">Diploma in Electronics & Communications</p>
+                                    <p className="text-[11px] text-muted-foreground">Singapore Polytechnic | 1997</p>
+                                </div>
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-4 p-6 rounded-3xl border border-border/40 bg-card/20">
                             <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
                                 <Globe className="h-5 w-5 text-primary" />
-                                Singapore Connections
+                                Singapore & Remote Profile
                             </h3>
                             <div className="flex flex-col gap-3 text-xs text-muted-foreground leading-relaxed">
-                                <p>• Active Member of **UXPA Singapore** (User Experience Professionals Association).</p>
-                                <p>• Guest speaker at **General Assembly Singapore** product design panels.</p>
-                                <p>• Mentor for Southeast Asian junior designers through online cohorts.</p>
+                                <p>• 18+ years of expertise in Singapore's ICT, training, and systems support sectors.</p>
+                                <p>• Specialist in bridging technical frameworks with human-centric interfaces.</p>
+                                <p>• Fully equipped for highly productive Work-From-Home (WFH) operations.</p>
                             </div>
                         </div>
                     </div>
@@ -304,6 +319,50 @@ export default function Home({ featuredProjects }: HomeProps) {
                             ))}
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Certifications Section */}
+            <section className="py-16 border-t border-border/40 max-w-5xl mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="font-serif text-3xl font-bold italic tracking-tight text-foreground">Professional Credentials</h2>
+                    <p className="text-sm text-muted-foreground mt-1.5">Specialized certifications validating UI/UX, Data Strategy, and Systems operations</p>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    {[
+                        { title: 'Certified Usability Analyst', issuer: 'Human Factors International (HFI) / NTUC', year: '2024', highlight: true },
+                        { title: 'Certified Digital Persuasion Analyst', issuer: 'Human Factors International (HFI) / NTUC', year: '2024' },
+                        { title: 'Associate UI/UX Designer', issuer: 'NTUC', year: '2024', highlight: true },
+                        { title: 'Data Visualisation', issuer: 'WSQ', year: '2025' },
+                        { title: 'Data Strategy', issuer: 'WSQ', year: '2025' },
+                        { title: 'Computational Modelling', issuer: 'WSQ', year: '2025' },
+                        { title: 'Business Needs Analysis', issuer: 'WSG', year: '2024' },
+                        { title: 'Agile Project Management', issuer: 'WSG', year: '2024' },
+                        { title: 'ITIL Foundation Certification', issuer: 'AXELOS', year: '2022' },
+                        { title: 'HTML5, JavaScript & CSS3', issuer: 'NTUC', year: '2023' },
+                        { title: 'Basic to Intermediate Illustrator', issuer: 'NTUC', year: '2024' },
+                        { title: 'Basic to Intermediate Photoshop', issuer: 'NTUC', year: '2023' }
+                    ].map((cert) => (
+                        <div
+                            key={cert.title}
+                            className={`flex flex-col justify-between p-5 rounded-2xl border transition-all ${
+                                cert.highlight 
+                                    ? 'border-primary/40 bg-primary/5 shadow-sm' 
+                                    : 'border-border/40 bg-card/20'
+                            }`}
+                        >
+                            <div>
+                                <span className={`text-xs font-bold leading-snug ${cert.highlight ? 'text-primary' : 'text-foreground'}`}>
+                                    {cert.title}
+                                </span>
+                                <p className="text-[10px] text-muted-foreground mt-1 leading-normal">{cert.issuer}</p>
+                            </div>
+                            <span className="text-[10px] font-semibold text-primary mt-3 text-right">
+                                {cert.year}
+                            </span>
+                        </div>
+                    ))}
                 </div>
             </section>
         </PortfolioLayout>

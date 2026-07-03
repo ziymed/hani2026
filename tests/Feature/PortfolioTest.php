@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\ContactMessage;
 use App\Models\Project;
 use App\Models\User;
 
@@ -186,9 +185,11 @@ test('homepage displays seeded premium ux ui projects', function () {
     $this->artisan('db:seed');
 
     $response = $this->get('/');
-    
+
     $response->assertStatus(200)
-        ->assertSee('Changi Airport Transit Experience')
-        ->assertSee('National Gallery Singapore AR Curator')
-        ->assertSee('hanita');
+        ->assertSee('Verdant Student Portal')
+        ->assertSee('SchoolHub')
+        ->assertSee('ServiceNow Operations')
+        ->assertSee('Workflow Automation')
+        ->assertSee('Hanita');
 });

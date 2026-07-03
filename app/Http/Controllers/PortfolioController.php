@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
 use App\Models\ContactMessage;
+use App\Models\Project;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -72,5 +72,13 @@ class PortfolioController extends Controller
         ContactMessage::create($validatedData);
 
         return back()->with('success', 'Thank you! Your message has been sent successfully.');
+    }
+
+    /**
+     * Display the interactive SchoolHub student portal work sample.
+     */
+    public function schoolhub(): Response
+    {
+        return Inertia::render('work-samples/schoolhub');
     }
 }

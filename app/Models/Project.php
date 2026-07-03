@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
     'project_url',
     'github_url',
     'image_path',
-    'is_featured'
+    'is_featured',
 ])]
 class Project extends Model
 {

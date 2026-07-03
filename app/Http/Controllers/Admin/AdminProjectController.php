@@ -50,7 +50,7 @@ class AdminProjectController extends Controller
             'is_featured' => 'required|boolean',
         ]);
 
-        $project = new Project();
+        $project = new Project;
         $project->title = $validated['title'];
         $project->slug = Str::slug($validated['title']);
         $project->description = $validated['description'];
@@ -64,7 +64,7 @@ class AdminProjectController extends Controller
         $slug = $project->slug;
         $count = 1;
         while (Project::where('slug', $slug)->exists()) {
-            $slug = $project->slug . '-' . $count++;
+            $slug = $project->slug.'-'.$count++;
         }
         $project->slug = $slug;
 
@@ -114,7 +114,7 @@ class AdminProjectController extends Controller
             $slug = $newSlug;
             $count = 1;
             while (Project::where('slug', $slug)->where('id', '!=', $project->id)->exists()) {
-                $slug = $newSlug . '-' . $count++;
+                $slug = $newSlug.'-'.$count++;
             }
             $project->slug = $slug;
         }
